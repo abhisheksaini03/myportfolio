@@ -14,7 +14,7 @@ interface BlurFadeProps {
   delay?: number;
   yOffset?: number;
   inView?: boolean;
-  inViewMargin?: string; // This should be compatible with CSS margin values
+  inViewMargin?: number | string; // Adjusted type to match possible `useInView` types
   blur?: string;
 }
 
@@ -30,18 +30,18 @@ const BlurFade = ({
   blur = "6px",
 }: BlurFadeProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  
-  // Ensure inViewMargin is a valid CSS value for margin
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+
+  // Ensure inViewMargin is a valid CSS value or number
+  const inViewResult = useInView(ref, { once: true, margin: inViewMargin as any });
   const isInView = !inView || inViewResult;
-  
+
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
-  
+
   const combinedVariants = variant || defaultVariants;
-  
+
   return (
     <AnimatePresence>
       <motion.div
