@@ -5,8 +5,8 @@ export const DATA = {
   name: "Abhishek Saini",
   initials: "DV",
   url: "https://dillion.io",
-  location: "San Francisco, CA",
-  locationLink: "https://www.google.com/maps/place/sanfrancisco",
+  location: "Chandigarh, India",
+  locationLink: "https://maps.app.goo.gl/ndJpaivvnCvbSjv37",
   description:
     "I am a proficient software developer with a BTech in Computer Science, known for my technical expertise and strong UI/UX design skills.",
   summary:
@@ -58,13 +58,13 @@ export const DATA = {
       },
       Youtube: {
         name: "Youtube",
-        url: "https://dub.sh/dillion-youtubehttps://www.youtube.com/channel/UCcCHdEYdAwIFgguPDMibiog",
+        url: "https://www.youtube.com/channel/UCcCHdEYdAwIFgguPDMibiog",
         icon: Icons.youtube,
         navbar: true,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "saini03april@gmail.com",
         icon: Icons.email,
 
         navbar: false,
