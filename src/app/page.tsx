@@ -1,6 +1,7 @@
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import IconCloud from "@/components/magicui/icon-cloud";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -8,8 +9,41 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import ShineBorder from "@/components/magicui/shine-border";
 
 const BLUR_FADE_DELAY = 0.04;
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
 export default function Page() {
   return (
@@ -121,8 +155,10 @@ export default function Page() {
                 <Badge key={tools}>{tools}</Badge>
               </BlurFade>
             ))}
+            <IconCloud iconSlugs={slugs} />
           </div>
         </div>
+        
       </section>
       <section id="projects">
         <div className="space-y-12 w-full py-12">
@@ -177,12 +213,8 @@ export default function Page() {
                   I like building things
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                During my time at university, I participated in over {" "}
+                  {DATA.hackathons.length}+ hackathons, clubs, and events. These gatherings brought together people from across the country to create remarkable projects in just 2-3 days. Witnessing the endless possibilities brought to life by a group of motivated and passionate individuals was truly eye-opening.
                 </p>
               </div>
             </div>
@@ -208,6 +240,7 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+      
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -229,10 +262,14 @@ export default function Page() {
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
               </p>
+              
             </div>
           </BlurFade>
         </div>
       </section>
+
+      
+     
     </main>
   );
 }
