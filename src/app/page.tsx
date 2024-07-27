@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import ShineBorder from "@/components/magicui/shine-border";
 
 const BLUR_FADE_DELAY = 0.04;
 const slugs = [
